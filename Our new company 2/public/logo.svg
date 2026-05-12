@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Outer gold circle -->
+  <circle cx="60" cy="60" r="54" stroke="#C8961B" stroke-width="3" fill="none"/>
+  <!-- Inner circle thin -->
+  <circle cx="60" cy="60" r="46" stroke="#C8961B" stroke-width="1" fill="none"/>
+  <!-- Maroon triangle (A shape) -->
+  <polygon points="60,14 98,82 22,82" fill="#8B1A1A"/>
+  <!-- Gold TG letters overlay -->
+  <text x="60" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="700" fill="#C8961B" letter-spacing="-1">TG</text>
+</svg>
