@@ -28,35 +28,30 @@ export default function SolutionsGrid() {
     <section className="section">
       <div className="container">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-          <motion.div variants={revealUp} style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <div className="section-eyebrow"><span className="label">Our Expertise</span><span className="gold-rule" /></div>
+          <motion.div variants={revealUp} style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <div className="section-eyebrow">
+              <span className="label">Our Expertise</span>
+              <span className="gold-rule" />
+            </div>
             <h2 className="section-title">Targeted <em>Solutions</em></h2>
             <p className="section-sub">Precise energetic interventions for specific life challenges.</p>
           </motion.div>
 
-          <motion.div variants={stagger} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
-            {services.map((svc, _i) => {
+          <motion.div variants={stagger} className="solutions-grid">
+            {services.map((svc) => {
               const Icon = svc.icon;
               return (
-                <motion.div key={svc.title} variants={revealUp}
-                  style={{ 
-                    background: '#FFFFFF', 
-                    padding: '2.5rem', 
-                    borderRadius: '2rem', 
-                    border: '1px solid var(--border)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.02)',
-                    transition: 'all 0.5s ease'
-                  }}
-                  whileHover={{ translateY: -8, boxShadow: '0 25px 50px rgba(0,0,0,0.05)', borderColor: 'rgba(200, 150, 27, 0.2)' }}>
-                  <div style={{ width: '48px', height: '48px', background: 'rgba(200, 150, 27, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--maroon)', borderRadius: '50%', marginBottom: '1.5rem' }}>
+                <motion.div
+                  key={svc.title}
+                  variants={revealUp}
+                  className="solution-card"
+                  whileHover={{ translateY: -8, boxShadow: '0 25px 50px rgba(0,0,0,0.05)', borderColor: 'rgba(200, 150, 27, 0.2)' }}
+                >
+                  <div className="solution-icon">
                     <Icon size={20} />
                   </div>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.2rem', color: 'var(--text-main)', marginBottom: '0.5rem' }}>{svc.title}</div>
-                  <div style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 700 }}>{svc.tag}</div>
+                  <div className="solution-title">{svc.title}</div>
+                  <div className="solution-tag">{svc.tag}</div>
                 </motion.div>
               );
             })}

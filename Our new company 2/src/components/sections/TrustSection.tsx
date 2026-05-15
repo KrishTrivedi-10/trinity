@@ -20,17 +20,19 @@ const stagger = {
 
 export default function TrustSection() {
   return (
-    <section className="section" style={{ background: 'var(--cream-dark)' }}>
+    <section className="section trust-section" style={{ background: 'var(--cream-dark)' }}>
       <div className="container">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
-          style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '6rem', alignItems: 'start' }}>
-
-          <motion.div variants={revealUp} style={{ position: 'sticky', top: '8rem' }}>
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
+          className="trust-grid"
+        >
+          {/* Left sticky heading */}
+          <motion.div variants={revealUp} className="trust-left">
             <div className="section-eyebrow" style={{ alignItems: 'flex-start' }}>
               <span className="label">The Difference</span>
               <span className="gold-rule" style={{ marginLeft: 0 }} />
             </div>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 3.5vw, 3.75rem)', lineHeight: 1.15, marginBottom: '1.75rem', marginTop: '1.5rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 3.5vw, 3.75rem)', lineHeight: 1.15, marginBottom: '1.75rem', marginTop: '1.5rem' }}>
               Why Choose <em>Trinity</em>
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '1rem', fontWeight: 300, lineHeight: 1.9, marginBottom: '2.5rem' }}>
@@ -39,6 +41,7 @@ export default function TrustSection() {
             <Link to="/consultation" className="btn-primary">Start Your Journey</Link>
           </motion.div>
 
+          {/* Right reason list */}
           <motion.div variants={stagger}>
             <div style={{ borderTop: '1px solid var(--border)' }}>
               {whyPoints.map((pt, i) => (

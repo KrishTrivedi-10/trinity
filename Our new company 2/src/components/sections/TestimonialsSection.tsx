@@ -19,27 +19,28 @@ const stagger = {
 
 export default function TestimonialsSection() {
   return (
-    <section className="section" style={{ background: 'var(--cream)', position: 'relative', overflow: 'hidden' }}>
-      {/* Bg ornament */}
-      <div style={{ position: 'absolute', top: 0, right: 0, width: '40%', height: '100%', backgroundImage: 'radial-gradient(circle at 80% 50%, rgba(200,150,27,0.06) 0%, transparent 60%)' }} />
+    <section className="section testimonials-section" style={{ background: 'var(--cream)', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', top: 0, right: 0, width: '40%', height: '100%', backgroundImage: 'radial-gradient(circle at 80% 50%, rgba(200,150,27,0.06) 0%, transparent 60%)', pointerEvents: 'none' }} />
 
       <div className="container">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
-          style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '6rem', alignItems: 'center' }}>
-
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
+          className="testimonials-grid"
+        >
+          {/* Left — Mentor */}
           <motion.div variants={revealUp}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
               <span className="label">The Mentor</span>
               <span className="gold-rule" />
             </div>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 3.5vw, 3.75rem)', lineHeight: 1.15, marginBottom: '2rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 3.5vw, 3.75rem)', lineHeight: 1.15, marginBottom: '2rem' }}>
               Meet <em>Saarthi<br />Sahil Jain</em>
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '1rem', fontWeight: 300, lineHeight: 1.9, marginBottom: '1.5rem' }}>
               Beginning his journey at 15 through practical astrology, Sahil ji spent decades studying the invisible forces that shape human outcomes — money, health, relationships, and purpose.
             </p>
             <div style={{ borderLeft: '2px solid var(--gold)', paddingLeft: '1.5rem', margin: '2rem 0' }}>
-              <p style={{ fontFamily: 'var(--font-accent)', fontSize: '1.35rem', color: 'var(--green)', fontStyle: 'italic', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: 'var(--font-accent)', fontSize: '1.2rem', color: 'var(--green)', fontStyle: 'italic', lineHeight: 1.7 }}>
                 "A true Saarthi shows direction — not dependence."
               </p>
             </div>
@@ -54,8 +55,8 @@ export default function TestimonialsSection() {
             <Link to="/about" className="btn-secondary">Know the Mentor</Link>
           </motion.div>
 
+          {/* Right — Testimonial cards */}
           <motion.div variants={revealUp}>
-            {/* Testimonials inline */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {testimonials.map((t, i) => (
                 <motion.div key={i} className="testimonial-card"
