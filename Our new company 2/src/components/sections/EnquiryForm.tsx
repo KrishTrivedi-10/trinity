@@ -15,7 +15,7 @@ const stagger = {
 export default function EnquiryForm() {
   return (
     <section className="cta-band">
-      <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '740px', margin: '0 auto' }}>
+      <div className="container cta-inner">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <motion.div variants={revealUp} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', marginBottom: '2.5rem' }}>
             <span style={{ fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>Begin Today</span>
@@ -31,6 +31,11 @@ export default function EnquiryForm() {
             <Link to="/consultation" className="btn-primary" style={{ padding: '1.1rem 2.75rem' }}>
               Book Personal Consultation <ArrowRight size={14} />
             </Link>
+          </motion.div>
+          <motion.div variants={revealUp} className="cta-notes">
+            <span>Personal diagnosis</span>
+            <span>Clear next step</span>
+            <span>No generic remedy</span>
           </motion.div>
         </motion.div>
       </div>

@@ -28,7 +28,7 @@ export default function TestimonialsSection() {
           className="testimonials-grid"
         >
           {/* Left — Mentor */}
-          <motion.div variants={revealUp}>
+          <motion.div variants={revealUp} className="mentor-panel">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
               <span className="label">The Mentor</span>
               <span className="gold-rule" />
@@ -39,15 +39,15 @@ export default function TestimonialsSection() {
             <p style={{ color: 'var(--text-muted)', fontSize: '1rem', fontWeight: 300, lineHeight: 1.9, marginBottom: '1.5rem' }}>
               Beginning his journey at 15 through practical astrology, Sahil ji spent decades studying the invisible forces that shape human outcomes — money, health, relationships, and purpose.
             </p>
-            <div style={{ borderLeft: '2px solid var(--gold)', paddingLeft: '1.5rem', margin: '2rem 0' }}>
-              <p style={{ fontFamily: 'var(--font-accent)', fontSize: '1.2rem', color: 'var(--green)', fontStyle: 'italic', lineHeight: 1.7 }}>
+            <div className="mentor-quote">
+              <p>
                 "A true Saarthi shows direction — not dependence."
               </p>
             </div>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2.5rem' }}>
+            <ul className="mentor-points">
               {['Spaces influence people differently', 'Energy strength defines outcomes', 'Generic remedies do not work'].map(pt => (
-                <li key={pt} style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '0.9rem', color: 'var(--text-body)' }}>
-                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--maroon)', flexShrink: 0 }} />
+                <li key={pt}>
+                  <span />
                   {pt}
                 </li>
               ))}
@@ -57,11 +57,12 @@ export default function TestimonialsSection() {
 
           {/* Right — Testimonial cards */}
           <motion.div variants={revealUp}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div className="testimonial-stack">
               {testimonials.map((t, i) => (
                 <motion.div key={i} className="testimonial-card"
                   initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.15, duration: 0.6 }} viewport={{ once: true }}>
+                  <span className="testimonial-mark">"</span>
                   <p className="testimonial-text">{t.text}</p>
                   <div className="testimonial-author">
                     <div className="testimonial-avatar" />

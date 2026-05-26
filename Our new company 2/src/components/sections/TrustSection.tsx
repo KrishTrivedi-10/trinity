@@ -43,10 +43,10 @@ export default function TrustSection() {
 
           {/* Right reason list */}
           <motion.div variants={stagger}>
-            <div style={{ borderTop: '1px solid var(--border)' }}>
+            <div className="trust-list">
               {whyPoints.map((pt, i) => (
                 <motion.div key={pt.title} className="why-item" variants={revealUp}
-                  whileHover={{ paddingLeft: '1rem' }} transition={{ duration: 0.3 }}>
+                  whileHover={{ x: 8 }} transition={{ duration: 0.3 }}>
                   <span className="why-num">{String(i + 1).padStart(2, '0')}</span>
                   <div className="why-body">
                     <h4>{pt.title}</h4>

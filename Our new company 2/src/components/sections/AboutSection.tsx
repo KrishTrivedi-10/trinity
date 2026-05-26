@@ -12,6 +12,12 @@ const stagger = {
   visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
 };
 
+const metrics = [
+  { value: '15+', label: 'Years' },
+  { value: '3', label: 'Core Paths' },
+  { value: '1:1', label: 'Guidance' },
+];
+
 export default function AboutSection() {
   return (
     <section className="section about-section" style={{ background: '#FFFFFF', borderBottom: '1px solid var(--border)' }}>
@@ -41,7 +47,7 @@ export default function AboutSection() {
           </motion.div>
 
           {/* Text Column */}
-          <motion.div variants={revealUp} style={{ paddingTop: '1rem' }}>
+          <motion.div variants={revealUp} className="about-copy-panel">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
               <span className="label">Our Sanctuary</span>
               <span className="gold-rule" />
@@ -55,6 +61,14 @@ export default function AboutSection() {
             <p style={{ color: 'var(--text-muted)', fontSize: '1rem', fontWeight: 300, lineHeight: 1.9, marginBottom: '2.5rem' }}>
               We don't believe in generic remedies or blind faith. Every recommendation is backed by principle, tested through experience, and refined over decades of dedicated practice.
             </p>
+            <div className="about-metrics">
+              {metrics.map((metric) => (
+                <div key={metric.label} className="about-metric">
+                  <strong>{metric.value}</strong>
+                  <span>{metric.label}</span>
+                </div>
+              ))}
+            </div>
             <Link to="/about" className="btn-ghost">
               Know Our Story <ArrowRight size={14} />
             </Link>

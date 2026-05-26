@@ -25,17 +25,11 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Courses', path: '/courses' },
-    { name: 'Learn', path: '/learn' },
-    { name: 'Events', path: '/events' },
-    { name: 'Media', path: '/videos' },
-    { name: 'Gallery', path: '/gallery' },
+    { name: 'Education', path: '/courses' },
+    { name: 'Guidance', path: '/consultation' },
+    { name: 'Solution', path: '/services' },
     { name: 'Blogs', path: '/blog' },
-    { name: 'Quotes', path: '/quotes' },
-    { name: 'Testimonials', path: '/testimonials' },
-    { name: 'Consultation', path: '/consultation' },
+    { name: 'Connect us', path: '/contact' },
   ];
 
   return (
